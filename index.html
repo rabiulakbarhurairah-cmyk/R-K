@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>R&amp;K - Al-Quran Hadis berbasis AI</title>
+<link rel="icon" href="img/Logo Full (4).png">
+<!-- Huruf: Inter (isi), Lora (judul), Amiri Quran (ayat) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Inter:wght@400;500;600;700&family=Lora:wght@600;700&display=swap">
+<!-- Ikon Tabler -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.42.0/dist/tabler-icons.min.css">
+<!-- Tampilan: file style.css -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="latar-video" aria-hidden="true">
+  <video autoplay muted loop playsinline preload="auto" poster="video/latar.jpg">
+    <source src="video/latar.mp4" type="video/mp4">
+  </video>
+</div>
+<div id="rk">
+<h2 class="sr-only">Aplikasi R&amp;K: pembelajaran Al-Quran Hadis berbasis AI untuk kelas X.</h2>
+<div class="app">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
+    <img class="logo-man3" src="img/Logo Full (4).png" alt="Logo MAN 3 Kota Makassar">
+    <div style="flex:1;min-width:180px"><div style="font-weight:500;font-size:16px">R&amp;K</div><div class="muted">Religion and Knowledge · Al-Quran Hadis · MAN 3 Kota · TA 2026/2027</div></div>
+    <span class="pill" style="background:var(--surface-2);border:0.5px solid var(--border)">Pertemuan 5</span>
+    <span class="pill" style="background:var(--bg-accent);color:var(--text-accent)" id="who">Aldania · X.3</span>
+  </div>
+  <div class="nav" id="nav">
+    <button data-v="home" class="on"><i class="ti ti-home" aria-hidden="true"></i>Beranda</button>
+    <button data-v="materi"><i class="ti ti-books" aria-hidden="true"></i>Materi</button>
+    <button data-v="bot"><i class="ti ti-message-chatbot" aria-hidden="true"></i>Tanya AI</button>
+    <button data-v="ai"><i class="ti ti-sparkles" aria-hidden="true"></i>Diskusi AI</button>
+    <button data-v="absen"><i class="ti ti-scan" aria-hidden="true"></i>Absen QR</button>
+    <button data-v="bintang"><i class="ti ti-star" aria-hidden="true"></i>Bintang</button>
+    <button data-v="tugas"><i class="ti ti-pencil" aria-hidden="true"></i>Tugas</button>
+    <button data-v="profil"><i class="ti ti-user" aria-hidden="true"></i>Profil</button>
+    <button data-v="kuis"><i class="ti ti-checklist" aria-hidden="true"></i>Kuis</button>
+    <button data-v="setor"><i class="ti ti-microphone" aria-hidden="true"></i>Setoran</button>
+    <button data-v="offline"><i class="ti ti-wifi-off" aria-hidden="true"></i>Hemat kuota</button>
+    <button data-v="guru"><i class="ti ti-school" aria-hidden="true"></i>Mode guru</button>
+  </div>
+
+  <div class="scr on" id="s-home">
+    <div id="h-teg"></div>
+    <div class="card">
+      <div style="font-weight:500;font-size:16px">Assalamu'alaikum, Aldania</div>
+      <div class="muted" style="margin-bottom:12px">Bintang keaktifanmu di pertemuan ini menjadi nilai harian.</div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="font-size:28px;font-weight:500"><span id="h-tot">3</span><span class="muted"> / 10</span></div>
+        <div style="flex:1"><div style="height:8px;background:var(--surface-1);border-radius:4px;overflow:hidden"><div id="h-bar" style="height:8px;width:30%;background:var(--text-warning)"></div></div><div class="muted" style="margin-top:4px" id="h-sub"></div></div>
+      </div>
+      <div class="fl" style="margin-top:12px"><span class="pill" style="background:var(--bg-warning);color:var(--text-warning)"><i class="ti ti-trophy" aria-hidden="true"></i> Peringkat <span id="h-rank">3</span> dari <span id="h-n">37</span> siswi</span><span class="pill" style="background:var(--bg-accent);color:var(--text-accent)" id="h-pend"></span></div>
+    </div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><div style="font-weight:500">Materi: Bab <span id="hm-n"></span></div><span class="pill" style="background:var(--bg-success);color:var(--text-success)">Interdisipliner</span></div>
+      <div style="margin:6px 0 10px" id="hm-t"></div>
+      <div class="fl" style="margin-bottom:12px" id="hm-sub"></div>
+      <div class="grid">
+        <div style="background:var(--bg-accent);border-radius:var(--radius);padding:12px"><div style="color:var(--text-accent);font-weight:500;font-size:14px"><i class="ti ti-flask" aria-hidden="true"></i> Ilmu Pengetahuan Umum</div><div class="muted" style="margin-top:4px" id="hm-um"></div></div>
+        <div style="background:var(--bg-warning);border-radius:var(--radius);padding:12px"><div style="color:var(--text-warning);font-weight:500;font-size:14px"><i class="ti ti-world" aria-hidden="true"></i> Ilmu Pengetahuan Sosial</div><div class="muted" style="margin-top:4px" id="hm-so"></div></div>
+      </div>
+      <div class="fl" style="margin-top:12px"><button id="to-bot"><i class="ti ti-message-chatbot" aria-hidden="true"></i> Tanya R&amp;K AI</button><button id="to-ai"><i class="ti ti-sparkles" aria-hidden="true"></i> Mulai diskusi bersama AI</button><button id="to-materi"><i class="ti ti-books" aria-hidden="true"></i> Semua materi</button></div>
+    </div>
+  </div>
+
+  <div class="scr" id="s-materi">
+    <div class="muted" id="m-intro" style="margin-bottom:8px">Materi Al-Quran Hadis kelas X, dihubungkan dengan ilmu pengetahuan umum dan ilmu pengetahuan sosial</div>
+    <div id="m-list"></div>
+    <div id="m-detail" style="display:none"></div>
+  </div>
+
+  <div class="scr" id="s-bot">
+    <div class="card">
+      <div class="fl" style="margin-bottom:6px"><i class="ti ti-message-chatbot" style="color:var(--text-accent);font-size:20px" aria-hidden="true"></i><span style="font-weight:500;flex:1">Tanya R&amp;K AI</span></div>
+      <div class="muted" style="margin-bottom:8px">Tanyakan apa saja tentang Al-Quran dan Hadis. AI akan menghubungkannya dengan ilmu pengetahuan umum dan ilmu pengetahuan sosial.</div>
+      <div id="bot-chat"></div>
+      <div class="muted" style="margin-top:8px">Contoh pertanyaan</div>
+      <div id="bot-sug" class="fl" style="gap:6px;margin:6px 0 10px"></div>
+      <div class="fl" style="align-items:stretch"><input id="bot-in" placeholder="Tulis pertanyaanmu di sini" style="flex:1;min-width:200px"><button id="bot-send"><i class="ti ti-send" aria-hidden="true"></i> Kirim</button></div>
+      <div class="err" id="bot-err"></div>
+    </div>
+  </div>
+
+  <div class="scr" id="s-ai">
+    <div class="card">
+      <div class="fl" style="margin-bottom:8px"><i class="ti ti-sparkles" style="color:var(--text-accent)" aria-hidden="true"></i><span style="font-weight:500;flex:1">Diskusi bersama AI</span><span class="pill" style="background:var(--bg-accent);color:var(--text-accent)">Bintang diskusi <span id="a-n">1</span> / 3</span></div>
+      <div class="muted" style="margin-bottom:6px">Pilih bab yang sedang dipelajari</div>
+      <div id="ai-bab" class="fl" style="gap:6px;margin-bottom:8px"></div>
+      <div id="chat"></div>
+      <textarea id="ans" rows="3" style="width:100%;box-sizing:border-box;margin-top:8px" placeholder="Tulis jawabanmu dengan kata-katamu sendiri"></textarea>
+      <div class="err" id="ans-err"></div>
+      <button id="ans-btn"><i class="ti ti-send" aria-hidden="true"></i> Kirim jawaban</button>
+    </div>
+  </div>
+
+  <div class="scr" id="s-absen">
+    <div class="card" style="text-align:center">
+      <div style="font-weight:500">Absen kelas X.3</div>
+      <div class="muted" style="margin-bottom:12px">Arahkan kamera ke QR yang ditampilkan guru</div>
+      <div style="width:200px;height:200px;margin:0 auto 12px;border-radius:12px;background:var(--surface-1);position:relative;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:40px"><i class="ti ti-qrcode" aria-hidden="true"></i>
+        <div style="position:absolute;inset:14px;border:2px dashed var(--border-strong);border-radius:8px"></div></div>
+      <button id="scan-btn"><i class="ti ti-scan" aria-hidden="true"></i> Pindai kode</button>
+      <div id="scan-out" style="margin-top:12px;font-size:14px"></div>
+    </div>
+  </div>
+
+  <div class="scr" id="s-bintang">
+    <div class="card">
+      <div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:28px;font-weight:500" id="b-count">3</span><span class="muted">dari 10 bintang pertemuan ini · realtime</span></div>
+      <div id="b-row" class="fl" style="gap:6px;margin:12px 0 8px"></div>
+      <div class="muted fl" style="gap:14px"><span><span class="st s-ai" style="width:12px;height:12px;vertical-align:-2px"></span> Diskusi AI (maks. 3)</span><span><span class="st s-gr" style="width:12px;height:12px;vertical-align:-2px"></span> Dari guru (maks. 7)</span></div>
+    </div>
+    <div class="grid">
+      <div class="card"><div style="font-weight:500;margin-bottom:8px">Riwayat bintangmu</div><div id="b-log" style="font-size:13px"></div></div>
+      <div class="card"><div style="font-weight:500">Peringkat kelas X.3</div><div class="muted" style="margin-bottom:8px">Jumlah bintang teman tidak ditampilkan</div><div id="b-board" style="font-size:13px"></div></div>
+    </div>
+  </div>
+
+  <div class="scr" id="s-tugas">
+    <div class="muted" style="margin-bottom:8px">Tugas dari guru untuk Aldania</div>
+    <div id="st-list"></div>
+  </div>
+
+  <div class="scr" id="s-profil">
+    <div class="card">
+      <div class="fl" style="margin-bottom:4px"><span style="font-weight:500;flex:1">Kontak wali kelas dan orang tua atau wali</span><span id="p-stat"></span></div>
+      <div class="muted" style="margin-bottom:12px">Diisi sendiri oleh kamu. Data ini hanya dilihat guru Al-Quran Hadis dan dipakai untuk mengirim tembusan teguran atau informasi pembelajaran.</div>
+      <div id="p-form">
+        <div style="font-weight:500;font-size:14px;margin-bottom:8px"><i class="ti ti-user-check" aria-hidden="true"></i> Wali kelas</div>
+        <div class="f2" style="margin-bottom:16px">
+          <div><label for="p-wkn">Nama wali kelas</label><input id="p-wkn" placeholder="Nama lengkap beserta gelar"></div>
+          <div><label for="p-wkk">Nomor WhatsApp wali kelas</label><input id="p-wkk" inputmode="tel" placeholder="0812xxxxxxxx"></div>
+        </div>
+        <div style="font-weight:500;font-size:14px;margin-bottom:8px"><i class="ti ti-home-heart" aria-hidden="true"></i> Orang tua atau wali</div>
+        <div class="f2" style="margin-bottom:12px">
+          <div><label for="p-otn">Nama orang tua atau wali</label><input id="p-otn" placeholder="Nama lengkap"></div>
+          <div><label for="p-oth">Hubungan</label><select id="p-oth"><option>Ibu</option><option>Ayah</option><option>Wali lainnya</option></select></div>
+          <div><label for="p-otk">Nomor WhatsApp orang tua atau wali</label><input id="p-otk" inputmode="tel" placeholder="0813xxxxxxxx"></div>
+        </div>
+        <label style="display:flex;gap:8px;align-items:flex-start;font-size:14px"><input type="checkbox" id="p-ok" style="margin-top:3px"> Saya mengisi data ini dengan sepengetahuan orang tua atau wali saya.</label>
+        <div class="err" id="p-err"></div>
+        <button id="p-save"><i class="ti ti-check" aria-hidden="true"></i> Simpan kontak</button>
+        <div id="p-out" style="margin-top:10px"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scr" id="s-kuis"><div class="card"><div style="font-weight:500">Kuis latihan</div><div class="muted" id="k-sum" style="margin-bottom:8px"></div><div id="k-bab" class="fl" style="gap:6px;margin-bottom:10px"></div><div id="k-body"></div></div></div>
+<div class="scr" id="s-setor"><div class="card"><div style="font-weight:500">Setoran bacaan</div><div class="muted" style="margin-bottom:8px">Pilih ayat, rekam bacaanmu, lalu kirim ke guru.</div><select id="r-ay"></select><div class="ar" id="r-ar"></div><div class="fl"><button id="r-rec">Rekam</button><button id="r-send">Kirim ke guru</button></div><audio id="r-au" controls style="display:none;width:100%;margin-top:8px"></audio><div class="err" id="r-err"></div></div><div class="card"><div style="font-weight:500;margin-bottom:6px">Riwayat setoran</div><div id="r-hist"></div></div></div>
+<div class="scr" id="s-offline"><div class="card"><div style="font-weight:500">Hemat kuota</div><label style="display:flex;gap:8px;font-size:14px;margin:8px 0"><input type="checkbox" id="o-save"> Mode hemat kuota: matikan animasi dan hiasan</label><span class="pill" id="o-net" style="background:var(--bg-accent);color:var(--text-accent)"></span></div><div class="card"><div style="font-weight:500;margin-bottom:6px">Paket materi offline</div><div id="o-list"></div><div class="muted" style="margin-top:8px">Pada versi final, aplikasi dipasang sebagai aplikasi web (PWA) agar benar-benar bisa dibuka tanpa internet.</div></div></div>
+<div class="scr" id="s-more"><div class="muted" style="margin-bottom:10px">Menu lainnya</div><div class="mg">
+<button class="mcard" data-go="ai"><span class="e">✨</span><b>Diskusi AI</b><small>Jawab, dapat bintang</small></button>
+<button class="mcard" data-go="absen"><span class="e">📷</span><b>Absen QR</b><small>Pindai kode guru</small></button>
+<button class="mcard" data-go="bintang"><span class="e">⭐</span><b>Bintang</b><small>Riwayat dan peringkat</small></button>
+<button class="mcard" data-go="tugas"><span class="e">✏️</span><b>Tugas</b><small>Dari guru</small></button>
+<button class="mcard" data-go="setor"><span class="e">🎤</span><b>Setoran bacaan</b><small>Rekam dan kirim</small></button>
+<button class="mcard" data-go="offline"><span class="e">📶</span><b>Hemat kuota</b><small>Materi offline</small></button>
+<button class="mcard" data-go="profil"><span class="e">👤</span><b>Profil</b><small>Kontak wali dan orang tua</small></button></div></div>
+<div class="scr" id="s-guru">
+    <div id="chips" class="fl" style="gap:6px;margin-bottom:12px"></div>
+    <div class="nav" id="gnav">
+      <button data-g="kelas" class="on"><i class="ti ti-users" aria-hidden="true"></i>Kelas dan bintang</button>
+      <button data-g="tugas"><i class="ti ti-send" aria-hidden="true"></i>Beri tugas</button>
+      <button data-g="nilai"><i class="ti ti-clipboard-check" aria-hidden="true"></i>Penilaian</button>
+      <button data-g="prog"><i class="ti ti-chart-bar" aria-hidden="true"></i>Kemajuan siswi</button>
+      <button data-g="alat"><i class="ti ti-file-text" aria-hidden="true"></i>Modul dan soal</button>
+      <button data-g="setor"><i class="ti ti-microphone" aria-hidden="true"></i>Setoran bacaan</button>
+      <button data-g="tinjau"><i class="ti ti-eye-check" aria-hidden="true"></i>Tinjau jawaban AI</button>
+      <button data-g="tegur"><i class="ti ti-message-circle" aria-hidden="true"></i>Teguran pribadi</button>
+    </div>
+
+    <div class="gs on" id="g-kelas">
+      <div class="grid" style="margin-bottom:12px">
+        <div style="background:var(--surface-2);border-radius:var(--radius);padding:12px"><div class="muted">Hadir</div><div style="font-size:24px;font-weight:500" id="g-h">0</div></div>
+        <div style="background:var(--surface-2);border-radius:var(--radius);padding:12px"><div class="muted">Bintang manual terpakai</div><div style="font-size:24px;font-weight:500" id="g-s">0</div></div>
+        <div style="background:var(--surface-2);border-radius:var(--radius);padding:12px"><div class="muted">Kontak sudah diisi</div><div style="font-size:24px;font-weight:500" id="g-k">0</div></div>
+      </div>
+      <div class="card">
+        <div style="font-weight:500;margin-bottom:8px">Beri bintang manual (maks. 7 per siswi)</div>
+        <div class="fl"><select id="g-sel" style="min-width:220px;max-width:100%"></select><button id="g-give"><i class="ti ti-star" aria-hidden="true"></i> Beri 1 bintang</button></div>
+        <div class="err" id="g-err"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+        <div class="card" style="text-align:center;margin:0"><div class="muted" style="margin-bottom:8px">QR absensi kelas <span id="g-c"></span></div><div id="g-qr" style="width:160px;margin:0 auto;color:var(--text-primary)"></div></div>
+        <div class="card" style="margin:0;grid-column:span 2;overflow-x:auto">
+          <div class="fl" style="margin-bottom:6px"><div style="font-weight:500;flex:1">Rekap kelas <span class="muted" id="g-cnt"></span></div><input id="g-q" placeholder="Cari nama siswi" style="width:170px"></div>
+          <table><thead><tr><th>Nama</th><th>Hadir</th><th>AI /3</th><th>Guru /7</th><th>Total</th><th>Nilai*</th><th>Kontak</th></tr></thead><tbody id="g-tb"></tbody></table>
+          <button id="g-more" style="margin-top:8px;font-size:13px">Tampilkan semua</button>
+          <div class="muted" style="margin-top:8px">*Contoh konversi: bintang × 10. Rumus bisa ditentukan guru.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gs" id="g-tugas">
+      <div class="card">
+        <div style="font-weight:500;margin-bottom:8px">Buat tugas baru</div>
+        <input id="gt-title" placeholder="Judul tugas" style="width:100%;box-sizing:border-box;margin-bottom:8px">
+        <textarea id="gt-desc" rows="3" style="width:100%;box-sizing:border-box" placeholder="Instruksi tugas"></textarea>
+        <div class="fl" style="margin-top:8px">
+          <span class="muted">Tenggat</span><input type="date" id="gt-due" value="2026-11-12">
+          <span class="muted">Kirim ke</span>
+          <select id="gt-target"><option value="all">Seluruh siswa X.1 sampai X.6</option><option value="cls" id="gt-clsopt">Satu kelas</option><option value="some">Siswi tertentu</option></select>
+        </div>
+        <div id="gt-pick" style="display:none;margin-top:10px">
+          <div class="muted" style="margin-bottom:6px">Pilih siswi dari kelas <span id="gt-pc"></span>, ganti kelas lewat tombol di atas</div>
+          <div class="fl"><select id="gt-name" style="min-width:220px;max-width:100%"></select><button id="gt-add"><i class="ti ti-plus" aria-hidden="true"></i> Tambah</button></div>
+          <div id="gt-chips" class="fl" style="gap:6px;margin-top:8px"></div>
+        </div>
+        <div class="err" id="gt-err"></div>
+        <button id="gt-send"><i class="ti ti-send" aria-hidden="true"></i> Kirim tugas</button>
+        <div id="gt-ok" style="margin-top:10px;font-size:14px"></div>
+      </div>
+      <div class="card"><div style="font-weight:500;margin-bottom:8px">Tugas yang sudah diberikan</div><div id="gt-list"></div></div>
+    </div>
+
+    <div class="gs" id="g-nilai">
+      <div class="card">
+        <div class="fl"><select id="gn-task" style="min-width:240px;max-width:100%"></select><span class="muted" id="gn-sum"></span></div>
+        <div id="gn-list" style="margin-top:12px"></div>
+        <button id="gn-demo" style="font-size:13px;margin-top:4px">Isi contoh pengumpulan (demo)</button>
+      </div>
+    </div>
+
+    <div class="gs" id="g-prog"><div class="card"><div style="font-weight:500">Kemajuan siswi kelas <span class="muted" id="pg-c"></span></div><div class="muted" style="margin-bottom:8px"><b id="pg-n">0</b> siswi tertinggal (kuis di bawah 40%, sering terlambat, atau banyak tugas kosong). Angka kuis siswi lain adalah contoh sampai mereka mengerjakan.</div><div style="overflow-x:auto"><table><thead><tr><th>Nama</th><th>Kuis</th><th>Tugas kosong</th><th>Terlambat</th><th>Status</th></tr></thead><tbody id="pg-tb"></tbody></table></div><button id="pg-all" style="margin-top:8px">Tampilkan semua</button></div></div>
+<div class="gs" id="g-alat"><div class="card"><div style="font-weight:500;margin-bottom:6px">Pembuat modul ajar dan soal</div><div class="muted" style="margin-bottom:8px">Draf disusun dari data materi Bab I sampai VI. Silakan diedit sebelum dipakai.</div><div class="fl"><select id="a-bab"></select><button id="a-m">Susun modul ajar</button><button id="a-s">Buat soal</button></div><textarea id="a-out" rows="16" style="width:100%;box-sizing:border-box;margin-top:8px"></textarea><div class="fl" style="margin-top:6px"><button id="a-cp">Salin teks</button><span class="muted" id="a-ok"></span></div></div></div>
+<div class="gs" id="g-setor"><div class="card"><div style="font-weight:500;margin-bottom:6px">Setoran bacaan siswi</div><div id="gs-list"></div></div></div>
+<div class="gs" id="g-tinjau"><div class="card"><div style="font-weight:500;margin-bottom:2px">Jawaban AI yang dilaporkan siswi (<span id="tj-n">0</span> baru)</div><div class="muted" style="margin-bottom:8px">Siswi menekan tombol di bawah jawaban Tanya AI, lalu guru memeriksa jawaban dan rujukannya.</div><div id="tj-list"></div></div></div>
+<div class="gs" id="g-tegur">
+      <div class="card">
+        <div style="font-weight:500">Teguran pribadi</div>
+        <div class="muted" style="margin-bottom:10px">Dikirim langsung ke akun siswi yang dipilih. Siswi lain tidak melihatnya.</div>
+        <div class="muted" style="margin-bottom:6px">Perlu perhatian di kelas ini (sering terlambat atau banyak tugas kosong)</div>
+        <div id="tt-flag" class="fl" style="gap:6px;margin-bottom:12px"></div>
+        <select id="tt-sel" style="min-width:240px;max-width:100%"></select>
+        <div id="tt-stat" class="fl" style="gap:6px;margin:10px 0"></div>
+        <div class="muted" style="margin-bottom:6px">Alasan teguran</div>
+        <div id="tt-rs" class="fl" style="gap:14px;margin-bottom:10px;font-size:14px">
+          <label><input type="checkbox" value="late"> Sering terlambat</label>
+          <label><input type="checkbox" value="miss"> Jarang mengerjakan tugas</label>
+          <label><input type="checkbox" value="lazy"> Kurang aktif atau malas</label>
+        </div>
+        <textarea id="tt-msg" rows="5" style="width:100%;box-sizing:border-box" placeholder="Pilih alasan, draf pesan akan muncul di sini dan bisa Bapak/Ibu ubah"></textarea>
+        <div class="muted" style="margin:12px 0 6px">Kirim tembusan ke (opsional)</div>
+        <div id="tt-cc" class="fl" style="gap:14px;font-size:14px">
+          <label><input type="checkbox" value="wali"> <i class="ti ti-user-check" aria-hidden="true"></i> Wali kelas</label>
+          <label><input type="checkbox" value="ortu"> <i class="ti ti-home-heart" aria-hidden="true"></i> Orang tua atau wali</label>
+        </div>
+        <div id="tt-ccinfo" style="margin-top:8px"></div>
+        <div id="tt-ccbox" style="display:none;margin-top:10px">
+          <div class="muted" style="margin-bottom:6px">Pesan tembusan (bisa diubah)</div>
+          <textarea id="tt-ccmsg" rows="6" style="width:100%;box-sizing:border-box"></textarea>
+          <div class="blk" style="background:var(--bg-accent);color:var(--text-accent);font-size:13px"><i class="ti ti-info-circle" aria-hidden="true"></i> Siswi akan diberi tahu bahwa tembusan ini dikirim, supaya tidak ada yang disembunyikan darinya.</div>
+        </div>
+        <div class="err" id="tt-err"></div>
+        <button id="tt-send"><i class="ti ti-send" aria-hidden="true"></i> Kirim teguran pribadi</button>
+      </div>
+      <div class="card"><div style="font-weight:500;margin-bottom:8px">Riwayat teguran</div><div id="tt-hist"></div></div>
+    </div>
+  </div>
+</div>
+<nav id="tabbar" aria-label="Menu utama"><button data-t="home" class="on"><span class="ic">🏠</span><span class="lb">Beranda</span></button><button data-t="materi"><span class="ic">📚</span><span class="lb">Materi</span></button><button data-t="bot"><span class="ic">🤖</span><span class="lb">Tanya AI</span></button><button data-t="kuis"><span class="ic">✅</span><span class="lb">Kuis</span></button><button data-t="more"><span class="ic">⋯</span><span class="lb">Lainnya</span></button><button data-t="guru"><span class="ic">🏫</span><span class="lb">Guru</span></button></nav>
+</div>
+<!-- Logika: file main.js (dimuat terakhir agar semua elemen di atas sudah ada) -->
+<script src="main.js"></script>
+</body>
+</html>
